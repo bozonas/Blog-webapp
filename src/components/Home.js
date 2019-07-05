@@ -2,12 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 
 import Header from "./Header";
-// import PostsList from "./PostsList";
+import PostsList from "./PostsList";
 
-export const Home = ({ displayName }) => {
+export const Home = ({ username }) => {
   function renderWelcome() {
-    if (displayName) {
-      return <h3>Welcome {displayName}.</h3>;
+    if (username) {
+      return <h3>Welcome {username}.</h3>;
     }
     return;
   }
@@ -30,14 +30,14 @@ export const Home = ({ displayName }) => {
       <br />
       <div className="container mb-3">{renderWelcome()}</div>
       <div>
-        {/* <PostsList /> */}
+        <PostsList />
       </div>
     </div>
   );
 };
 
-// const mapStateToProps = state => ({
-//   displayName: state.auth.displayName
-// });
+const mapStateToProps = state => ({
+  username: state.auth.username
+});
 
-export default connect()(Home);
+export default connect(mapStateToProps)(Home);

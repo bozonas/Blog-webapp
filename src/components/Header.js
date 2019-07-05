@@ -2,12 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-// import { startLogout } from "../actions/auth";
+import { startLogout } from "../actions/auth";
 
 export class Header extends React.Component {
   renderLinks = () => {
-    // if (this.props.auth.role === "admin") {
-    if (false) {
+    if (this.props.auth.is_superuser === true) {
       return (
         <li className="nav-item d-sm-inline-block">
           <Link to="/addpost" className="nav-link">
@@ -15,8 +14,7 @@ export class Header extends React.Component {
           </Link>
         </li>
       );
-    // } else if (!this.props.auth.id) {
-    } else if (true) {
+    } else if (!this.props.auth.id) {
       return (
         <div>
           <li className="nav-item d-sm-inline-block">
@@ -34,13 +32,12 @@ export class Header extends React.Component {
     }
   };
   renderSignOutButton = () => {
-    // if (this.props.auth.id) {
-    if (true) {
+    if (this.props.auth.id) {
       return (
         <li className="nav-item">
           <button
             name="signout"
-            // onClick={this.props.startLogout}
+            onClick={this.props.startLogout}
             className="btn btn-secondary"
           >
             Sign Out
@@ -51,7 +48,7 @@ export class Header extends React.Component {
   };
   render() {
     return (
-      <nav className="navbar navbar-expand-sm navbar-light bg-light fixed-top py-4">
+      <nav className="navbar navbar-expand-sm navbar-light bg-light py-4">
         <div className="container">
           <Link to="/" className="navbar-brand">
             <h3 className="mb-0">React Blog</h3>
@@ -80,11 +77,11 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   startLogout: token => dispatch(startLogout(token))
-// });
+const mapDispatchToProps = dispatch => ({
+  startLogout: token => dispatch(startLogout(token))
+});
 
 export default connect(
   mapStateToProps,
-  // mapDispatchToProps
+  mapDispatchToProps
 )(Header);

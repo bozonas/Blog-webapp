@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "express": "^4.16.4",
+    "axios": "^0.18.0",
     "bootstrap": "^3.3.7",
+    "express": "^4.16.4",
     "material-ui": "^0.20.2",
+    "moment": "^2.24.0",
     "node-sass": "^4.11.0",
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.5",
@@ -18,7 +20,8 @@
     "redux": "^3.7.2",
     "redux-form": "^8.1.0",
     "redux-thunk": "^2.2.0",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "validator": "^10.11.0"
   },
   "scripts": {
     "start": "rimraf ./build && react-scripts start",
