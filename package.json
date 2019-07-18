@@ -24,6 +24,9 @@
     "validator": "^10.11.0"
   },
   "scripts": {
+    "build:prod": "./node_modules/.bin/webpack --mode production",
+    "build:dev": "./node_modules/.bin/webpack --mode development",
+    "prestart": "npm run build:prod",
     "start": "rimraf ./build && react-scripts start",
     "start-server": "node server/server.js",
     "build": "react-scripts build",
