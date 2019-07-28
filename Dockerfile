@@ -13,4 +13,4 @@ RUN npm cache clean --force && npm install
 COPY . .
 # set application PORT and expose docker PORT, 80 is what Elastic Beanstalk expects
 EXPOSE 3000
-CMD [ "npm", "run", "start" ]
+CMD npm run build && npm start
