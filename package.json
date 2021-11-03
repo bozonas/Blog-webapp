@@ -21,7 +21,7 @@
     "redux-form": "^8.2.5",
     "redux-thunk": "^2.2.0",
     "rimraf": "^2.6.3",
-    "validator": "^10.11.0"
+    "validator": "^13.7.0"
   },
   "scripts": {
     "build:prod": "./node_modules/.bin/webpack --mode production",
